@@ -30,6 +30,7 @@ class ActorManager:
             f"(first_name, last_name) VALUES (?, ?)",
             (first_name, last_name)
         )
+        self.connection.commit()
 
     def update(self, pk: int, new_first_name: str, new_last_name: str) -> None:
         self.connection.execute(
